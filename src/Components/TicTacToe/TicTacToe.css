@@ -1,0 +1,152 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    background-color: #282c34;
+}
+
+.title {
+    color: white;
+}
+
+.title span {
+    color: #00ffff;
+}
+
+.reset {
+    height: 10vh;
+    width: 20vw;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #00ffff;
+    background-color: black;
+    outline: none;
+    border: none;
+    border-radius: 1vw;
+    margin: 1vh;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: #00ffff;
+    color: black;
+}
+
+.board {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+    /* board width = 60% of viewport height */
+    height: 50vh;
+    /* board height = 60% of viewport height */
+    gap: 1vh;
+    /* spacing between rows */
+    margin: auto;
+    /* center on screen */
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    gap: 1vh;
+    /* spacing between columns */
+}
+
+.boxes {
+    flex: 1;
+    background: #1e2a32;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    /* responsive font size for X/O */
+    cursor: pointer;
+}
+
+/* Rounded corners (outer 4 only) */
+.row:first-child .boxes:first-child {
+    border-top-left-radius: 2vh;
+}
+
+.row:first-child .boxes:last-child {
+    border-top-right-radius: 2vh;
+}
+
+.row:last-child .boxes:first-child {
+    border-bottom-left-radius: 2vh;
+}
+
+.row:last-child .boxes:last-child {
+    border-bottom-right-radius: 2vh;
+}
+
+.boxes img {
+    height: 6vh;
+    /* responsive image size for X/O */
+    width: 6vh;
+}
+
+.line {
+  position: absolute;
+  background: #00ffcc;
+  height: 6px;
+  border-radius: 3px;
+  transform-origin: center;
+  opacity: 0.5; /* reduce opacity */
+  box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; /* glowing effect */
+}
+
+/* Rows */
+.line.row1 {
+  top: 16%;
+  left: 0;
+  width: 100%;
+}
+.line.row2 {
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+.line.row3 {
+  top: 84%;
+  left: 0;
+  width: 100%;
+}
+
+/* Columns */
+.line.col1 {
+  left: 16%;
+  top: 0;
+  width: 6px;
+  height: 100%;
+}
+.line.col2 {
+  left: 50%;
+  top: 0;
+  width: 6px;
+  height: 100%;
+}
+.line.col3 {
+  left: 84%;
+  top: 0;
+  width: 6px;
+  height: 100%;
+}
+
+/* Diagonals */
+.line.diag1 {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.line.diag2 {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
